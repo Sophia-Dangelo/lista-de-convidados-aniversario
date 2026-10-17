@@ -1,0 +1,75 @@
+@charset "UTF-8";
+
+/* Configuração geral da página */
+body {
+    background-color: #eaccf7b7;
+    color: #4a2e5c; /* Mudei para um tom escuro para o texto aparecer bem */
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente na tela toda */
+    align-items: center;     /* Centraliza verticalmente na tela toda */
+    height: 100vh;           /* Ocupa a altura inteira da tela */
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Caixa geral do conteúdo */
+.formulario-container {
+    background-color: #cb6ee23d;
+    width: 100%;
+    max-width: 450px;
+    padding: 30px;           /* Dá um respiro nas bordas internas */
+    box-sizing: border-box;  /* Garante que o padding não estoure o tamanho */
+    border-radius: 12px;
+    
+    /* Flexbox para empilhar e centralizar tudo perfeitamente */
+    display: flex;
+    flex-direction: column;
+    align-items: center;     /* Centraliza os itens no meio da caixa */
+    gap: 20px;               /* Cria um espaço automático e bonito entre cada elemento */
+}
+
+/* Textos */
+h1 {
+    font-size: 22px;
+    margin: 0;
+    text-align: center;
+}
+
+p {
+    font-size: 14px;
+    margin: 0;
+    text-align: center;
+    line-height: 1.4;
+}
+
+/* Imagem do check */
+#img-feito {
+    width: 100px; /* Defina um tamanho ideal para a imagem não gigante */
+    height: auto;
+    object-fit: contain;
+}
+
+/* Botão */
+#button2 {
+    background-color: #9D55F5;
+    color: white;             
+    padding: 12px 24px;       
+    font-size: 16px;           
+    border: none;             
+    border-radius: 8px;       
+    cursor: pointer;           
+    transition: background-color 0.3s ease;
+    width: 100%;               /* Faz o botão ocupar a largura da caixa (opcional) */
+}
+
+#button2:hover {
+    background-color: #6a26bd; 
+}
+
+/* Responsividade para celular */
+@media (max-width: 768px) {
+    .formulario-container {
+        max-width: 90%; 
+        padding: 20px;   
+    }
+}

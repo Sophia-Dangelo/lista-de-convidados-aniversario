@@ -1,0 +1,125 @@
+@charset "UTF-8";
+
+/* Centraliza tudo na tela */
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: Arial, sans-serif;
+}
+
+/* Caixa geral do formulário */
+.formulario-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+/* Cada grupinho de label + input */
+.group {
+    display: flex;
+    flex-direction: column; /* Força o label a ficar em cima e o input embaixo */
+    align-items: flex-start; /* Alinha o texto à esquerda da caixinha */
+    margin-bottom: 15px;
+    width: 320px; /* Define um tamanho fixo e igual para todas as linhas */
+}
+
+/* Faz a caixinha ocupar toda a largura do grupo (320px) */
+.group input {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    box-sizing: border-box; /* Impede que o padding quebre o tamanho */
+}
+
+h1, p {
+    text-align: center;
+}
+
+#button1{
+    /* Cores e visual */
+    background-color: #9D55F5; /* Cor de fundo (ex: verde bonito) */
+    color: white;             /* Cor do texto dentro do botão */
+    padding: 10px 20px;       /* Espaçamento interno para ele não ficar muito apertado */
+    font-size: 16px;          /* Tamanho do texto */
+    border: none;             /* Tira a borda padrão feia do navegador */
+    border-radius: 8px;       /* Deixa as bordinhas arredondadas */
+    /* A mãozinha mágica! */
+    cursor: pointer;          
+    
+    /* Um detalhe suave para a transição de cor não ser seca */
+    transition: background-color 0.3s ease;
+}
+
+#button1:hover {
+    background-color: #6a26bd; /* Uma cor um pouquinho mais escura para dar o destaque */
+}
+
+
+#button2{
+    /* Cores e visual */
+    background-color: #9D55F5; /* Cor de fundo (ex: verde bonito) */
+    color: white;             /* Cor do texto dentro do botão */
+    padding: 10px 20px;       /* Espaçamento interno para ele não ficar muito apertado */
+    font-size: 16px;          /* Tamanho do texto */
+    border: none;             /* Tira a borda padrão feia do navegador */
+    border-radius: 8px;       /* Deixa as bordinhas arredondadas */
+    /* A mãozinha mágica! */
+    cursor: pointer;          
+    
+    /* Um detalhe suave para a transição de cor não ser seca */
+    transition: background-color 0.3s ease;
+}
+
+
+#button2:hover {
+    background-color: #6a26bd; /* Uma cor um pouquinho mais escura para dar o destaque */
+}
+
+
+/* Força as tags de link <a> a ocuparem um bloco centralizado do mesmo tamanho dos inputs */
+.formulario-container a {
+    display: block;
+    width: 100%;
+    max-width: 320px; /* Mesma largura dos inputs (320px) */
+    text-decoration: none;
+    margin-bottom: 10px; /* Espaço entre os botões */
+}
+
+/* Deixa os botões preenchendo 100% do link e alinhados */
+#button1, #button2 {
+    width: 100%;
+    box-sizing: border-box;
+    display: block;
+    margin: 0 auto;
+}
+
+
+body {
+    background-color: #F1DFCB;
+    color: #ffffff;
+    
+}
+
+
+@media (max-width: 768px) {
+    .formulario-container {
+        max-width: 90%; /* A caixa ocupa 90% da largura da tela do celular, deixando uma margem bonita nas laterais */
+        padding: 20px;   /* Diminui um pouco o espaço interno para economizar espaço */
+    }
+}
+
+.group{
+    color: #8C3260;
+}
+
+h1 {
+    color: #8C3260;
+}
+
+p{
+    color: #8C3260;
+}
+
+

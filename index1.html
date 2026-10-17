@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmação de Presença</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <br><br>
+
+    <div class="formulario-container">
+        <h1>Confirme sua presença:</h1>
+        <p>Seja muito Bem-vindo ao formulário de <br> confirmação de presença:</p>
+
+        <!-- Formulário sem o action direto do SheetDB -->
+        <form id="meuFormulario">
+
+            <input type="hidden" name="status" value="Confirmado 🎉">
+
+            <div class="group">
+                <label for="nome">Nome completo</label>
+                <input type="text" id="nome" name="nome" placeholder="Digite seu nome aqui" required>
+            </div>
+
+            <div class="group">
+                <label for="acompanhantes">Quantidade de acompanhantes</label>
+                <input type="number" id="acompanhantes" name="acompanhantes" placeholder="Digite a quantidade" required>
+            </div>
+
+            <div class="group">
+                <label for="mensagem">Mensagem especial</label>
+                <input type="text" id="mensagem" name="mensagem" placeholder="Digite uma mensagem especial">
+            </div>
+            
+            <br><br>
+
+            <button type="submit" id="button1">Confirmar Presença</button>
+
+        </form>
+
+        <br>
+        <a href="index2.html">
+            <button id="button2">Ver detalhes do evento</button>
+        </a>
+
+    </div>
+
+    <!-- Script em JavaScript para interceptar o envio e redirecionar -->
+    <script>
+        const formulario = document.getElementById('meuFormulario');
+
+        formulario.addEventListener('submit', function(event) {
+            // Impede a página de recarregar e ir para a tela preta com {"created": 1}
+            event.preventDefault();
+
+            // Pega os dados preenchidos no formulário
+            const dadosFormulario = new FormData(formulario);
+
+            // Envia para o SheetDB em segundo plano usando fetch
+            fetch('https://sheetdb.io/api/v1/y0eofuldpeowx', {
+                method: 'POST',
+                body: dadosFormulario
+            })
+            .then(response => response.json())
+            .then(data => {
+                // Assim que o SheetDB confirma que salvou, redireciona para o agradecimento!
+                window.location.href = 'index3.html';
+            })
+            .catch(error => {
+                console.error('Erro ao enviar:', error);
+                alert('Ops! Ocorreu um erro ao enviar sua confirmação. Tente novamente.');
+            });
+        });
+    </script>
+
+</body>
+
+</html>

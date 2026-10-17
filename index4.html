@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recusa de Presença</title>
+    <link rel="stylesheet" href="style4.css">
+</head>
+
+<body>
+
+    <br><br>
+
+    <div class="formulario-container">
+        <h1>Confirme sua presença:</h1> <br> <br>
+        
+
+       
+
+        <form id="meuFormularioNaoVou">
+
+            <input type="hidden" name="status" value="Não Vai 😢">
+            <input type="hidden" name="acompanhantes" value="0">
+
+            <div class="group">
+                <label for="nome">Nome completo</label>
+                <input type="text" id="nome" name="nome" placeholder="Digite seu nome aqui" required>
+            </div>
+
+            <div class="group">
+                <label for="mensagem">Mensagem especial</label>
+                <input type="text" id="mensagem" name="mensagem" placeholder="Digite uma mensagem especial">
+            </div>
+            
+            <br><br>
+
+            <button type="submit" id="button1">Confirmar Resposta</button>
+
+        </form>
+
+        <br>
+        <a href="index2.html">
+            <button id="button2">Ver detalhes do evento</button>
+        </a>
+
+    </div>
+
+    <script>
+        const formulario = document.getElementById('meuFormularioNaoVou');
+
+        formulario.addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const dadosFormulario = new FormData(formulario);
+
+            fetch('https://sheetdb.io/api/v1/y0eofuldpeowx', {
+                method: 'POST',
+                body: dadosFormulario
+            })
+            .then(response => response.json())
+            .then(data => {
+                window.location.href = 'index3.html';
+            })
+            .catch(error => {
+                console.error('Erro ao enviar:', error);
+                alert('Ops! Ocorreu um erro ao enviar sua resposta.');
+            });
+        });
+    </script>
+
+</body>
+
+</html>
