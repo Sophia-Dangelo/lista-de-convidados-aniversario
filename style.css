@@ -122,4 +122,34 @@ p{
     color: #8C3260;
 }
 
+/* Ajuste para ecrãs de telemóvel */
+@media (max-width: 768px) {
+  /* Alinha os blocos principais em coluna */
+  body, .container, main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+  }
 
+  /* Imagens adaptáveis que não estouram a largura */
+  img, iframe {
+    max-width: 100% !important;
+    height: auto !important;
+  }
+
+  /* Botões organizados no telemóvel */
+  .botoes-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+  }
+
+  button, #button1, #button2 {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+}
